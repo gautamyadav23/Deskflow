@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Color Palette - Premium Dark Theme */
+  --bg-main: #0a0d14;
+  --bg-card: rgba(20, 26, 40, 0.6);
+  --bg-card-hover: rgba(28, 37, 56, 0.8);
+  --bg-column: rgba(13, 18, 29, 0.8);
+  --bg-input: rgba(15, 22, 36, 0.9);
+  
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-color-hover: rgba(255, 255, 255, 0.15);
+  
+  /* Text colors */
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  /* Accent Colors */
+  --accent-primary: #6366f1; /* Indigo */
+  --accent-primary-glow: rgba(99, 102, 241, 0.35);
+  
+  /* Priority Colors */
+  --priority-urgent-bg: rgba(239, 68, 68, 0.1);
+  --priority-urgent-border: rgba(239, 68, 68, 0.4);
+  --priority-urgent-text: #ef4444;
+  --priority-urgent-glow: rgba(239, 68, 68, 0.25);
+
+  --priority-high-bg: rgba(249, 115, 22, 0.1);
+  --priority-high-border: rgba(249, 115, 22, 0.4);
+  --priority-high-text: #f97316;
+  --priority-high-glow: rgba(249, 115, 22, 0.25);
+
+  --priority-medium-bg: rgba(59, 130, 246, 0.1);
+  --priority-medium-border: rgba(59, 130, 246, 0.4);
+  --priority-medium-text: #3b82f6;
+  --priority-medium-glow: rgba(59, 130, 246, 0.25);
+
+  --priority-low-bg: rgba(16, 185, 129, 0.1);
+  --priority-low-border: rgba(16, 185, 129, 0.4);
+  --priority-low-text: #10b981;
+  --priority-low-glow: rgba(16, 185, 129, 0.25);
+
+  /* Status Colors */
+  --status-open: #f59e0b;
+  --status-inprogress: #3b82f6;
+  --status-resolved: #10b981;
+  --status-closed: #6b7280;
+
+  /* Glassmorphism values */
+  --backdrop-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.06);
+  
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Base layout & typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Dynamic Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseBorder {
+  0% {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.2);
+  }
+  50% {
+    border-color: rgba(99, 102, 241, 0.8);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.4);
+  }
+  100% {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.2);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-normal);
+}
